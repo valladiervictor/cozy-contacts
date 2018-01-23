@@ -27,6 +27,14 @@
       "verbs": [
         "GET"
       ]
+    },
+    "contacts": {
+      "description": "Required to manage your contacts",
+      "type": "io.cozy.contacts",
+      "methods": [
+        "GET",
+        "POST"
+      ]
     }
   }
 }
