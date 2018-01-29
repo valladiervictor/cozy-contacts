@@ -2737,6 +2737,10 @@ body {
     margin-right: 0;
     text-align: center;
   }
+  .c-nav-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
   .c-nav-text {
     display: block;
     text-align: center;
@@ -2745,7 +2749,7 @@ body {
   .c-nav-link {
     display: block;
     height: auto;
-    padding: 1.8125rem 0 0;
+    padding: 0;
     text-align: center;
     color: #5d6165;
     font-size: 0.625rem;
@@ -2804,6 +2808,10 @@ body {
     margin-right: 0;
     text-align: center;
   }
+  .c-nav-item__icon--1DVY2 svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
   .c-nav-item__text--1IMTK {
     display: block;
     text-align: center;
@@ -2812,7 +2820,7 @@ body {
   .c-nav-link--3aZyS {
     display: block;
     height: auto;
-    padding: 1.8125rem 0 0;
+    padding: 0;
     text-align: center;
     color: #5d6165;
     font-size: 0.625rem;
