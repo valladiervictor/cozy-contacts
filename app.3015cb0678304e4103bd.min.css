@@ -576,7 +576,7 @@ body {
   border-radius: 2px;
   min-height: 2.5rem;
   min-width: 7rem;
-  padding: 0.8125rem 1rem;
+  padding: 0.5rem 1rem;
   background: #297ef2;
   vertical-align: top;
   text-align: center;
@@ -1351,6 +1351,42 @@ body {
   height: 100%;
   background-color: rgba(41,126,242,0.05);
 }
+.c-avatar {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #f5f6f7;
+  color: #d6d8da;
+}
+.c-avatar--small {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+.c-avatar--medium {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+}
+.c-avatar--medium svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.c-avatar-initials {
+  font-weight: bold;
+  line-height: 1;
+}
+.c-avatar-image {
+  width: 100%;
+}
 .u-visuallyhidden {
   position: absolute !important;
   border: 0 !important;
@@ -1702,7 +1738,7 @@ body {
   border-radius: 2px;
   min-height: 2.5rem;
   min-width: 7rem;
-  padding: 0.8125rem 1rem;
+  padding: 0.5rem 1rem;
   background: #297ef2;
   vertical-align: top;
   text-align: center;
@@ -2021,7 +2057,7 @@ body {
   border-radius: 2px;
   min-height: 2.5rem;
   min-width: 7rem;
-  padding: 0.8125rem 1rem;
+  padding: 0.5rem 1rem;
   background: #297ef2;
   vertical-align: top;
   text-align: center;
@@ -2197,9 +2233,8 @@ body {
 .coz-modal-container--P56xN .coz-modal--qoEwJ {
   position: relative;
   margin: auto;
-  max-width: 30rem;
   border-radius: 0.5rem;
-  min-width: 30rem;
+  min-width: 34rem;
   max-height: 100%;
   background-color: #fff;
   color: #32363f;
@@ -2210,6 +2245,21 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+.coz-modal-container--P56xN .coz-modal--small--22fMW {
+  max-width: 34rem;
+}
+.coz-modal-container--P56xN .coz-modal--medium--roL5V {
+  max-width: 36rem;
+}
+.coz-modal-container--P56xN .coz-modal--large--2pLI5 {
+  max-width: 40rem;
+}
+.coz-modal-container--P56xN .coz-modal--xlarge--3Voux {
+  max-width: 50rem;
+}
+.coz-modal-container--P56xN .coz-modal--xxlarge--16AF9 {
+  max-width: 60rem;
 }
 .coz-modal-container--P56xN .coz-modal-content--1kPPF:first-child,
 .coz-modal-container--P56xN .coz-btn-modal-close--2ql21 + .coz-modal-content--1kPPF {
@@ -2805,28 +2855,37 @@ body {
   margin: 0.5rem 0 1rem;
 }
 .c-avatar--3nILq {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 50%;
-  text-align: center;
   overflow: hidden;
+  background-color: #f5f6f7;
+  color: #d6d8da;
 }
 .c-avatar--small--cN_QU {
   width: 2rem;
   height: 2rem;
-}
-.c-avatar--small--cN_QU .c-avatar-initials--1dZcc {
   font-size: 1rem;
 }
 .c-avatar--medium--1LlFX {
   width: 4rem;
   height: 4rem;
-}
-.c-avatar--medium--1LlFX .c-avatar-initials--1dZcc {
   font-size: 2rem;
+}
+.c-avatar--medium--1LlFX svg {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .c-avatar-initials--1dZcc {
   font-weight: bold;
-  line-height: 2.2;
+  line-height: 1;
 }
 .c-avatar-image--5EqK4 {
   width: 100%;
@@ -3069,15 +3128,22 @@ body {
     margin: 0 0 0 1rem;
   }
 }
-@media not all and (pointer: fine) {
+@media (hover: none) {
   .c-nav-item:hover::before {
     content: none;
   }
-  .c-nav-link:hover {
-    color: #5d6165;
+  .c-table-row:hover,
+  .c-table-row-head:hover,
+  .contact:hover {
+    background-color: transparent;
   }
   .c-nav-item--3HJO0:hover::before {
     content: none;
+  }
+}
+@media not all and (pointer: fine) {
+  .c-nav-link:hover {
+    color: #5d6165;
   }
   .c-nav-link--3aZyS:hover {
     color: #5d6165;
@@ -3173,14 +3239,14 @@ body {
     display: none !important;
   }
 }
-@media all and (min-width: 30rem) {
+@media all and (min-width: 40rem) {
   .coz-alerter--1boe4 .coz-alert--37n8o {
     z-index: 80;
     top: 1rem;
     bottom: auto;
     left: 50%;
-    margin-left: -15rem;
-    max-width: 30rem;
+    margin-left: -20rem;
+    max-width: 40rem;
     padding: 1rem 1.5rem;
     width: 100%;
     border-radius: 0.625rem;
@@ -3190,10 +3256,10 @@ body {
     bottom: auto;
   }
 }
-@media (max-width: 32rem) {
+@media (max-width: 36rem) {
   .coz-modal-container--P56xN .coz-modal--qoEwJ {
     margin: auto;
-    max-width: 30rem;
+    max-width: 34rem;
     min-width: auto;
     width: 100%;
   }
