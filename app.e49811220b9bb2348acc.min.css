@@ -1913,26 +1913,26 @@ body {
 .c-btn--action--1egnc:focus {
   background-color: transparent;
 }
-.c-btn--1NF6Q.c-btn--tiny--2CLzc {
+.c-btn--tiny--2CLzc {
   min-height: 1.5rem;
   min-width: 5rem;
   padding: 0.3125rem 1rem;
 }
-.c-btn--1NF6Q.c-btn--small--3RTIh {
+.c-btn--small--3RTIh {
   min-height: 2rem;
   min-width: 6rem;
   padding: 0.5rem;
 }
-.c-btn--1NF6Q.c-btn--large--1c7k- {
+.c-btn--large--1c7k- {
   min-height: 3rem;
   min-width: 10rem;
   padding: 1rem 1.5rem;
   font-size: 1rem;
 }
-.c-btn--1NF6Q.c-btn--full--1-5mu {
+.c-btn--full--1-5mu {
   width: 100%;
 }
-.c-btn--1NF6Q.c-btn--narrow--1Pjmc {
+.c-btn--narrow--1Pjmc {
   min-width: auto;
 }
 .icon--2kaoz {
@@ -2499,7 +2499,7 @@ body {
 }
 .intentModal__cross--1elWg.intentModal__cross--1elWg {
   top: 0.25rem;
-  right: 0.5rem;
+  right: 0.25rem;
 }
 .coz-tabs--Qf3-n .coz-tab-list--22pz_ {
   border-bottom: 1px solid #d6d8da;
