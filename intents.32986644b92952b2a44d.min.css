@@ -1709,6 +1709,50 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.app-wrapper {
+  width: 100%;
+}
+.app-content {
+  height: 100vh;
+}
+.intent-layout {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.intent-footer {
+  height: 4.5rem;
+  background-color: #f5f6f7;
+  -webkit-box-shadow: inset 0 -1px 0 0 #d6d8da;
+          box-shadow: inset 0 -1px 0 0 #d6d8da;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 1rem;
+}
+.intent-footer .intent-footer-label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.intent-main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow-y: scroll;
+  width: 100%;
+}
 .coz-btn--1rRxl[aria-busy=true] span::after {
   content: '';
   display: inline-block;
@@ -1913,26 +1957,26 @@ body {
 .c-btn--action--1egnc:focus {
   background-color: transparent;
 }
-.c-btn--tiny--2CLzc {
+.c-btn--1NF6Q.c-btn--tiny--2CLzc {
   min-height: 1.5rem;
   min-width: 5rem;
   padding: 0.3125rem 1rem;
 }
-.c-btn--small--3RTIh {
+.c-btn--1NF6Q.c-btn--small--3RTIh {
   min-height: 2rem;
   min-width: 6rem;
   padding: 0.5rem;
 }
-.c-btn--large--1c7k- {
+.c-btn--1NF6Q.c-btn--large--1c7k- {
   min-height: 3rem;
   min-width: 10rem;
   padding: 1rem 1.5rem;
   font-size: 1rem;
 }
-.c-btn--full--1-5mu {
+.c-btn--1NF6Q.c-btn--full--1-5mu {
   width: 100%;
 }
-.c-btn--narrow--1Pjmc {
+.c-btn--1NF6Q.c-btn--narrow--1Pjmc {
   min-width: auto;
 }
 .icon--2kaoz {
