@@ -1605,6 +1605,9 @@ body {
 .c-nav-icon {
   fill: currentColor;
 }
+.fix-c-btn svg {
+  margin-right: 0 !important;
+}
 .list-wrapper {
   width: 100%;
   max-width: 80rem;
@@ -1659,6 +1662,9 @@ body {
 .contact-email {
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
+}
+.menu__item--danger {
+  color: #f52d2d;
 }
 .contact-fields-title {
   font-size: 1.2rem;
