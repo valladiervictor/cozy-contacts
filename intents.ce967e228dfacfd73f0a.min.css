@@ -1717,7 +1717,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 90%;
 }
 .app-wrapper {
   width: 100%;
