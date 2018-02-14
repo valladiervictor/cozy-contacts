@@ -1717,6 +1717,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 90%;
 }
 .coz-btn--1rRxl[aria-busy=true] span::after {
   content: '';
