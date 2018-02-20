@@ -1611,7 +1611,7 @@ body {
 .list-wrapper {
   width: 100%;
   max-width: 80rem;
-  margin: auto;
+  margin: 0 auto;
   -webkit-box-shadow: 0 4px 4px 0 #d6d8da;
           box-shadow: 0 4px 4px 0 #d6d8da;
 }
@@ -1619,6 +1619,19 @@ body {
   width: 100%;
   max-width: 80rem;
   margin: 0.75rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.topbar .topbar__left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .list-contact,
 .sublist-contact {
@@ -1725,49 +1738,110 @@ body {
   display: flex;
   max-width: 90%;
 }
-.app-wrapper {
-  width: 100%;
-}
-.app-content {
-  height: 100vh;
-}
-.intent-layout {
-  height: 100%;
+.contact-form {
+  height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  overflow: hidden;
 }
-.intent-footer {
+.contact-form__fields {
+  height: 50%;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  overflow: auto;
+}
+.contact-form__footer {
   height: 4.5rem;
-  background-color: #f5f6f7;
-  -webkit-box-shadow: inset 0 -1px 0 0 #d6d8da;
-          box-shadow: inset 0 -1px 0 0 #d6d8da;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.contact-form__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  max-width: 30rem;
+  margin: 0.5rem auto;
+}
+.contact-form__label {
+  position: relative;
+  width: 30%;
+  padding-right: 0.5rem;
+  padding-left: 2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #95999d;
+}
+.contact-form__icon {
+  position: absolute;
+  left: 0;
+}
+.contact-form__input-wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 70%;
+}
+.contact-form__input,
+.contact-form__label-input {
   padding: 0.5rem 1rem;
-}
-.intent-footer .intent-footer-label {
+  border: 1px solid #d6d8da;
+  width: 0;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  line-height: 1.4;
 }
-.intent-main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  overflow-y: scroll;
-  width: 100%;
+.contact-form__input:focus,
+.contact-form__label-input:focus {
+  border: 0.0625rem solid #297ef2;
+  outline: 0;
+}
+.contact-form__input::-webkit-input-placeholder,
+.contact-form__label-input::-webkit-input-placeholder {
+  color: #95999d;
+  font-size: 1rem;
+}
+.contact-form__input:-ms-input-placeholder,
+.contact-form__label-input:-ms-input-placeholder {
+  color: #95999d;
+  font-size: 1rem;
+}
+.contact-form__input::-ms-input-placeholder,
+.contact-form__label-input::-ms-input-placeholder {
+  color: #95999d;
+  font-size: 1rem;
+}
+.contact-form__input::placeholder,
+.contact-form__label-input::placeholder {
+  color: #95999d;
+  font-size: 1rem;
+}
+.contact-form__label-input {
+  margin-left: 0.5rem;
 }
 .coz-btn--1rRxl[aria-busy=true] span::after {
   content: '';
