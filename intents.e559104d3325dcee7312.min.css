@@ -1786,6 +1786,9 @@ body {
   max-width: 75%;
   margin: 0.5rem auto;
 }
+.contact-form__inputs-wrapper {
+  width: 70%;
+}
 .contact-form__label {
   position: relative;
   width: 30%;
@@ -1799,11 +1802,63 @@ body {
   position: absolute;
   left: 0;
 }
+.contact-form__meta-wrapper {
+  position: relative;
+}
+.contact-form__meta-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 100%;
+  top: 25%;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.3rem;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.contact-form__meta-button:focus {
+  outline: 0;
+}
+.contact-form__meta-button--add {
+  margin-left: 3rem;
+  background: #297ef2;
+}
+.contact-form__meta-button--add:hover,
+.contact-form__meta-button--add:focus {
+  background: #0b61d6;
+}
+.contact-form__meta-button--remove {
+  margin-left: 1rem;
+  background: none;
+  border: 1px solid #95999d;
+  opacity: 0;
+}
+.contact-form__meta-button--remove:hover,
+.contact-form__meta-button--remove:focus {
+  background: #d6d8da;
+  border-color: #d6d8da;
+}
+.contact-form__meta-wrapper:hover .contact-form__meta-button--remove,
+.contact-form__input-wrapper--focused ~ .contact-form__meta-button--remove {
+  opacity: 1;
+}
 .contact-form__input-wrapper {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 70%;
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 .contact-form__input,
 .contact-form__label-input {
@@ -1842,6 +1897,50 @@ body {
 }
 .contact-form__label-input {
   margin-left: 0.5rem;
+}
+.app-wrapper {
+  width: 100%;
+}
+.app-content {
+  height: 100vh;
+}
+.intent-layout {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.intent-footer {
+  height: 4.5rem;
+  background-color: #f5f6f7;
+  -webkit-box-shadow: inset 0 -1px 0 0 #d6d8da;
+          box-shadow: inset 0 -1px 0 0 #d6d8da;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 1rem;
+}
+.intent-footer .intent-footer-label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.intent-main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow-y: scroll;
+  width: 100%;
 }
 .coz-btn--1rRxl[aria-busy=true] span::after {
   content: '';
