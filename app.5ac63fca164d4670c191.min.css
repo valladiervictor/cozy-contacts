@@ -1820,12 +1820,16 @@ body {
   top: 25%;
   width: 1.25rem;
   height: 1.25rem;
-  padding: 0 0.3rem;
+  padding: 0;
   border: 0;
   border-radius: 50%;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+}
+.contact-form__meta-button svg {
+  width: 10;
+  height: 10;
 }
 .contact-form__meta-button:focus {
   outline: 0;
