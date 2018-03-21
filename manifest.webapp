@@ -41,8 +41,14 @@
       "description": "Required to manage your contacts",
       "type": "io.cozy.contacts",
       "methods": [
-        "GET",
-        "POST"
+        "ALL"
+      ]
+    },
+    "contactsgroups": {
+      "description": "Required to manage groups of contacts",
+      "type": "io.cozy.contacts.groups",
+      "methods": [
+        "ALL"
       ]
     }
   },
