@@ -2041,50 +2041,6 @@ body {
 .group-manager__indicator {
   margin-left: 0.5rem;
 }
-.app-wrapper {
-  width: 100%;
-}
-.app-content {
-  height: 100vh;
-}
-.intent-layout {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.intent-footer {
-  height: 4.5rem;
-  background-color: #f5f6f7;
-  -webkit-box-shadow: inset 0 -1px 0 0 #d6d8da;
-          box-shadow: inset 0 -1px 0 0 #d6d8da;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0.5rem 1rem;
-}
-.intent-footer .intent-footer-label {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-.intent-main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  overflow-y: scroll;
-  width: 100%;
-}
 .coz-btn--1rRxl[aria-busy=true] > span::after {
   content: '';
   display: inline-block;
@@ -3407,10 +3363,15 @@ body {
   padding: 0.5rem;
   border-left: 4px solid transparent;
   color: #32363f;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 .select-option--1TD9j:hover {
   background-color: #f5f6f7;
   cursor: pointer;
+}
+.select-option--focused--2HKhT {
+  background-color: #f5f6f7;
 }
 .select-option--selected--2TZCi {
   background-color: #f5f6f7;
