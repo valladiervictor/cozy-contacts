@@ -1,0 +1,176 @@
+{
+  "name": "Contacts",
+  "editor": "Cozy",
+  "name_prefix": "Cozy",
+  "slug": "contacts",
+  "icon": "icon.svg",
+  "type": "webapp",
+  "description": "Contact manager for Cozy Cloud",
+  "category": "cozy",
+  "version": "0.8.0",
+  "licence": "AGPL-3.0",
+  "source": "https://github.com/cozy/cozy-contacts.git@build",
+  "developer": {
+    "name": "Cozy Cloud",
+    "url": "https://cozy.io"
+  },
+  "default_locale": "en",
+  "screenshots": [
+    "screenshots/fr/screenshot01.png",
+    "screenshots/fr/screenshot02.png",
+    "screenshots/fr/screenshot03.png"
+  ],
+  "routes": {
+    "/": {
+      "folder": "/",
+      "index": "index.html",
+      "public": false
+    },
+    "/services": {
+      "folder": "/intents",
+      "index": "index.html",
+      "public": false
+    }
+  },
+  "permissions": {
+    "apps": {
+      "type": "io.cozy.apps",
+      "verbs": [
+        "GET"
+      ]
+    },
+    "contacts": {
+      "type": "io.cozy.contacts",
+      "methods": [
+        "ALL"
+      ]
+    },
+    "contactsgroups": {
+      "type": "io.cozy.contacts.groups",
+      "methods": [
+        "ALL"
+      ]
+    },
+    "contactsAccounts": {
+      "type": "io.cozy.contacts.accounts",
+      "methods": [
+        "ALL"
+      ]
+    }
+  },
+  "intents": [
+    {
+      "action": "PICK",
+      "type": [
+        "io.cozy.contacts"
+      ],
+      "href": "/services"
+    },
+    {
+      "action": "CREATE",
+      "type": [
+        "io.cozy.contacts"
+      ],
+      "href": "/services"
+    }
+  ],
+  "locales": {
+    "de": {
+      "short_description": "Cozy Contacts helps you to save, secure and manage all your contacts from your Cozy.",
+      "long_description": "With Cozy Contacts you can:\n\n* Add, edit and sort your contacts,\n* Manage your groups of contacts,\n* Make your sharing easier from Cozy Drive with your contacts,\n* Synchronise your contacts from Google,\n* And soon, synchronise your contacts from your mobile and other online services (iCloud, Facebook...)",
+      "permissions": {
+        "apps": {
+          "description": "Required by the main menu to display the icons of the apps"
+        },
+        "contacts": {
+          "description": "Required to manage your contacts"
+        },
+        "contactsgroups": {
+          "description": "Required to manage groups of contacts"
+        },
+        "contactsAccounts": {
+          "description": "Required to link your contacts with your remote accounts"
+        }
+      }
+    },
+    "en": {
+      "short_description": "Cozy Contacts helps you to save, secure and manage all your contacts from your Cozy.",
+      "long_description": "With Cozy Contacts you can:\n\n* Add, edit and sort your contacts,\n* Manage your groups of contacts,\n* Make your sharing easier from Cozy Drive with your contacts,\n* Synchronise your contacts from Google,\n* And soon, synchronise your contacts from your mobile and other online services (iCloud, Facebook...)",
+      "permissions": {
+        "apps": {
+          "description": "Required by the main menu to display the icons of the apps"
+        },
+        "contacts": {
+          "description": "Required to manage your contacts"
+        },
+        "contactsgroups": {
+          "description": "Required to manage groups of contacts"
+        },
+        "contactsAccounts": {
+          "description": "Required to link your contacts with your remote accounts"
+        }
+      }
+    },
+    "es": {
+      "short_description": "Cozy Contacts le ayuda a guardar, proteger y administrar todos sus contactos desde su Cozy",
+      "long_description": "With Cozy Contacts you can:\n\n* Add, edit and sort your contacts,\n* Manage your groups of contacts,\n* Make your sharing easier from Cozy Drive with your contacts,\n* Synchronise your contacts from Google,\n* And soon, synchronise your contacts from your mobile and other online services (iCloud, Facebook...)",
+      "permissions": {
+        "apps": {
+          "description": "Requerido por el menú principal para mostrar los iconos de las aplicaciones"
+        },
+        "contacts": {
+          "description": "Necesario para administrar sus contactos"
+        },
+        "contactsgroups": {
+          "description": "Necesario para administrar grupo de contactos"
+        },
+        "contactsAccounts": {
+          "description": "Necesario para vincular sus contactos con sus cuentas remotas"
+        }
+      }
+    },
+    "fr": {
+      "short_description": "Cozy Contacts est l’application de sauvegarde, de sécurisation et de gestion centralisée de tous vos contacts depuis votre Cozy.",
+      "long_description": "Avec Cozy Contacts vous pouvez : \n\n* Ajouter, modifier et trier vos contacts, \n* Gérer vos groupes de contacts,\n* Faciliter vos partages depuis Cozy Drive avec vos contacts\n* Synchroniser vos contacts depuis Google,\n* Et bientôt, synchroniser vos contacts depuis votre mobile ou d'autres services en ligne (iCloud, Facebook...)",
+      "permissions": {
+        "apps": {
+          "description": "Utilisé pour afficher la liste des applications dans le menu principal"
+        },
+        "contacts": {
+          "description": "Utilisé pour gérer vos contacts"
+        },
+        "contactsgroups": {
+          "description": "Utilisé pour gérer vos groupes de contacts"
+        },
+        "contactsAccounts": {
+          "description": "Utilisé pour faire les associations entre vos contacts et vos comptes distants"
+        }
+      }
+    },
+    "nl_NL": {
+      "short_description": "Cozy Contactpersonen helpt je bij het opslaan en beheren van contactpersonen op je Cozy.",
+      "long_description": "Met Cozy Contactpersonen kun je:\n\n- Contactpersonen toevoegen, bewerken en sorteren\n* Groepen beheren\n* Het delen vanuit Cozy Drive vereenvoudigen\n* Je contactpersonen van Google synchroniseren\n* En binnenkort kun je ook contactpersonen synchroniseren van je telefoon en andere online diensten (iCloud, Facebook, etc.)",
+      "permissions": {
+        "apps": {
+          "description": "Vereist door het hoofdmenu om app-pictogrammen te tonen"
+        },
+        "contacts": {
+          "description": "Vereist om je contactpersonen te kunnen beheren"
+        },
+        "contactsgroups": {
+          "description": "Vereist om groepen te beheren"
+        },
+        "contactsAccounts": {
+          "description": "Vereist om je contactpersonen te koppelen aan online accounts"
+        }
+      }
+    }
+  },
+  "langs": [
+    "de",
+    "en",
+    "es",
+    "fr",
+    "nl_NL"
+  ]
+}
