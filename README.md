@@ -39,26 +39,49 @@ $ yarn install
 
 Cozy's apps use a standard set of _npm scripts_ to run common tasks, like watch, lint, test, build…
 
+### Fixtures
+
+:warn: To import fixtures, `ach` must be available globally (see [the doc here][ach]).
+
+A fixture file is available, you can import its data with :
+
+```
+$ yarn fixtures
+```
+
+You can also import more than 2000 contacts in one batch with this other command :
+
+```
+$ yarn fixtures:massive
+```
+
+### Services
+
+Services can be triggered (and tested manually) by running `yarn services:[ServiceName]`. Otherwise, the application must be installed (by cozy-stack or store) for the services to work. You can take a look to the [service documentation][service] and [cozy-konnector-dev documentation][cozy-konnector-dev] for more informations.
 
 ### Run it inside the VM
 
-You can easily view your current running app, you can use the [cozy-stack docker image][cozy-stack-docker]:
+First, you need to install `docker` and our `cozy-app-dev` image. See how to in our [install the development environment documentation][setup]
+
+Then, you need to build at least once the `Contacts` app before running the docker image:
 
 ```sh
-# in a terminal, run your app in watch mode
-$ cd cozy-contacts
-$ yarn watch
+$ yarn start
 ```
+
+Then, in an other process, you can run the docker image: 
 
 ```sh
-# in another terminal, run the docker container
-$ docker run --rm -it -p 8080:8080 -v "$(pwd)/build":/data/cozy-app/cozy-contacts cozy/cozy-app-dev
-or
-$ yarn stack:docker
+$ yarn stack:docker:dev
 ```
 
-your app is available at http://cozy-contacts.cozy.tools:8080.
+Your app is now available at http://app.cozy.tools:8080.
 
+Password is `cozy` by default.
+
+This command uses the [cozy-stack docker image][cozy-stack-docker].
+
+By launching this `stack:docker:dev` command, you disable our Content Security Policy (CSP) (which are very restrictive by default) to have access to the HMR. Don't forget to test your builded application (not watched) using `stack:docker:prod` to activate them.
 
 ### Living on the edge
 
@@ -68,13 +91,14 @@ your app is available at http://cozy-contacts.cozy.tools:8080.
 git clone https://github.com/cozy/cozy-ui.git
 cd cozy-ui
 yarn install
+yarn transpile
 yarn link
 ```
 
 then go back to your app project and replace the distributed cozy-ui module with the linked one:
 
 ```sh
-cd cozy-drive
+cd cozy-contacts
 yarn link cozy-ui
 ```
 
@@ -116,9 +140,9 @@ If you want to work on cozy-contacts and submit code modifications, feel free to
 
 Localization and translations are handled by [Transifex][tx], which is used by all Cozy's apps.
 
-As a _translator_, you can login to [Transifex][tx-signin] (using your Github account) and claim an access to the [app repository][tx-app]. Locales are pulled when app is build before publishing.
+As a _translator_, you can login to [Transifex][tx-signin] (using your Github account) and claim an access to the [app repository][tx-app]. Transifex will then create pull request on the repository, and the locales are merged after validating the pull request.
 
-As a _developer_, you must [configure the transifex client][tx-client], and claim an access as _maintainer_ to the [app repository][tx-app]. Then please **only update** the source locale file (usually `en.json` in client and/or server parts), and push it to Transifex repository using the `tx push -s` command.
+As a _developer_, you just have to modify json in `/src/locales`.
 
 
 ### Maintainer
@@ -143,7 +167,7 @@ cozy-contacts is developed by cozy and distributed under the [AGPL v3 license][a
 
 
 [cozy]: https://cozy.io "Cozy Cloud"
-[setup]: https://dev.cozy.io/#set-up-the-development-environment "Cozy dev docs: Set up the Development Environment"
+[setup]: https://docs.cozy.io/en/tutorials/app/#install-the-development-environment "Cozy dev docs: Set up the Development Environment"
 [yarn]: https://yarnpkg.com/
 [yarn-install]: https://yarnpkg.com/en/docs/install
 [cozy-ui]: https://github.com/cozy/cozy-ui
@@ -153,12 +177,12 @@ cozy-contacts is developed by cozy and distributed under the [AGPL v3 license][a
 [bill-doctype]: https://github.com/cozy/cozy-konnector-libs/blob/master/models/bill.js
 [konnector-doctype]: https://github.com/cozy/cozy-konnector-libs/blob/master/models/base_model.js
 [konnectors]: https://github.com/cozy/cozy-konnector-libs
+[cozy-konnector-dev]: https://github.com/konnectors/libs/tree/master/packages/cozy-jobs-cli#cozy-konnector-dev
 [agpl-3.0]: https://www.gnu.org/licenses/agpl-3.0.html
 [contribute]: CONTRIBUTING.md
 [tx]: https://www.transifex.com/cozy/
 [tx-signin]: https://www.transifex.com/signin/
 [tx-app]: https://www.transifex.com/cozy/<SLUG_TX>/dashboard/
-[tx-client]: http://docs.transifex.com/client/
 [freenode]: http://webchat.freenode.net/?randomnick=1&channels=%23cozycloud&uio=d4
 [forum]: https://forum.cozy.io/
 [github]: https://github.com/cozy/
@@ -166,3 +190,5 @@ cozy-contacts is developed by cozy and distributed under the [AGPL v3 license][a
 [nvm]: https://github.com/creationix/nvm
 [ndenv]: https://github.com/riywo/ndenv
 [jest]: https://facebook.github.io/jest/
+[ach]: https://docs.cozy.io/en/ach/
+[service]: https://docs.cozy.io/en/cozy-stack/apps/#services

@@ -4,9 +4,10 @@
   "name_prefix": "Cozy",
   "slug": "contacts",
   "icon": "icon.svg",
+  "type": "webapp",
   "description": "Contact manager for Cozy Cloud",
   "category": "cozy",
-  "version": "0.5.4",
+  "version": "0.9.3",
   "licence": "AGPL-3.0",
   "source": "https://github.com/cozy/cozy-contacts.git@build",
   "developer": {
@@ -33,24 +34,42 @@
   },
   "permissions": {
     "apps": {
-      "description": "Required by the cozy-bar to display the icons of the apps",
       "type": "io.cozy.apps",
       "verbs": [
         "GET"
       ]
     },
     "contacts": {
-      "description": "Required to manage your contacts",
       "type": "io.cozy.contacts",
-      "methods": [
+      "verbs": [
         "ALL"
       ]
     },
     "contactsgroups": {
-      "description": "Required to manage groups of contacts",
       "type": "io.cozy.contacts.groups",
-      "methods": [
+      "verbs": [
         "ALL"
+      ]
+    },
+    "contactsAccounts": {
+      "type": "io.cozy.contacts.accounts",
+      "verbs": [
+        "ALL"
+      ]
+    },
+    "settings": {
+      "description": "Required by the cozy-bar to display Claudy and know which applications are coming soon",
+      "type": "io.cozy.settings",
+      "verbs": [
+        "GET"
+      ]
+    },
+    "triggers": {
+      "description": "Used to sort contacts",
+      "type": "io.cozy.triggers",
+      "verbs": [
+        "GET",
+        "POST"
       ]
     }
   },
@@ -70,14 +89,82 @@
       "href": "/services"
     }
   ],
+  "services": {
+    "keepIndexFullNameAndDisplayNameUpToDate": {
+      "type": "node",
+      "file": "services/keepIndexFullNameAndDisplayNameUpToDate/contacts.js",
+      "trigger": "@event io.cozy.contacts:CREATED,UPDATED",
+      "debounce": "5s"
+    }
+  },
   "locales": {
     "en": {
-      "name": "Contacts",
-      "short_description": "Cozy Contacts helps you to save and secure your contacts on your Cozy.",
-      "long_description": "With Cozy Contacts you can:\n- Add, modify and sort your contacts.\n- Imports all your contacts from Google, Facebook and more."
+      "short_description": "Cozy Contacts helps you to save, secure and manage all your contacts from your Cozy.",
+      "long_description": "With Cozy Contacts you can:\n\n* Add, edit and sort your contacts,\n* Manage your groups of contacts,\n* Make your sharing easier from Cozy Drive with your contacts,\n* Synchronise your contacts from Google,\n* And soon, synchronise your contacts from your mobile and other online services (iCloud, Facebook...)",
+      "permissions": {
+        "apps": {
+          "description": "Required by the main menu to display the icons of the apps"
+        },
+        "contacts": {
+          "description": "Required to manage your contacts"
+        },
+        "contactsgroups": {
+          "description": "Required to manage groups of contacts"
+        },
+        "contactsAccounts": {
+          "description": "Required to link your contacts with your remote accounts"
+        },
+        "triggers": {
+          "description": "Used to sort contacts"
+        }
+      }
+    },
+    "es": {
+      "short_description": "Cozy Contacts le ayuda a guardar, proteger y administrar todos sus contactos desde su Cozy",
+      "long_description": "Con Cozy Contacts usted puede:\n\n* Añadir, editar y ordenar sus contactos,\n* Administrar sus grupos de contactos,\n* Compartir con sus contactos desde Cozy Drive,\n* Sincronizar sus contactos desde Google,\n* Y pronto, sincronizar sus contactos desde su móvil y otros servicios online (iCloud, Facebook...)",
+      "permissions": {
+        "apps": {
+          "description": "Requerido por el menú principal para mostrar los iconos de las aplicaciones"
+        },
+        "contacts": {
+          "description": "Necesario para administrar sus contactos"
+        },
+        "contactsgroups": {
+          "description": "Necesario para administrar grupo de contactos"
+        },
+        "contactsAccounts": {
+          "description": "Necesario para vincular sus contactos con sus cuentas remotas"
+        },
+        "triggers": {
+          "description": "Necesario para clasificar los contactos"
+        }
+      }
+    },
+    "fr": {
+      "short_description": "Cozy Contacts est l’application de sauvegarde, de sécurisation et de gestion centralisée de tous vos contacts depuis votre Cozy.",
+      "long_description": "Avec Cozy Contacts vous pouvez : \n\n* Ajouter, modifier et trier vos contacts, \n* Gérer vos groupes de contacts,\n* Faciliter vos partages depuis Cozy Drive avec vos contacts\n* Synchroniser vos contacts depuis Google,\n* Et bientôt, synchroniser vos contacts depuis votre mobile ou d'autres services en ligne (iCloud, Facebook...)",
+      "permissions": {
+        "apps": {
+          "description": "Utilisé pour afficher la liste des applications dans le menu principal"
+        },
+        "contacts": {
+          "description": "Utilisé pour gérer vos contacts"
+        },
+        "contactsgroups": {
+          "description": "Utilisé pour gérer vos groupes de contacts"
+        },
+        "contactsAccounts": {
+          "description": "Utilisé pour faire les associations entre vos contacts et vos comptes distants"
+        },
+        "triggers": {
+          "description": "Utilisé pour trier les contacts"
+        }
+      }
     }
   },
   "langs": [
-    "en"
+    "en",
+    "es",
+    "fr"
   ]
 }
